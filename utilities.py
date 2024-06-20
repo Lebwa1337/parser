@@ -29,4 +29,6 @@ def create_json_file(products_list: list[dict[str, str]]):
 
 
 def bulk_create_product(products_list: list[dict[str, str]]):
-    Product.objects.bulk_create(products_list)
+    for product in products_list:
+        lookup_param = {"title": product.pop("title")}
+        Product.objects.update_or_create(**lookup_param, defaults=product)
