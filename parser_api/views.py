@@ -1,6 +1,4 @@
-from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.pagination import PageNumberPagination
